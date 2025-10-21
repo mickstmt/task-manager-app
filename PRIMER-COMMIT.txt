@@ -1,0 +1,11 @@
+# Ver qué archivos han cambiado
+git status
+
+# Agregar todos los archivos al staging area
+git add .
+
+# Hacer el commit con un mensaje descriptivo
+git commit -m "chore: initial project setup with folder structure"
+
+# Subir los cambios a GitHub
+git push origin main
