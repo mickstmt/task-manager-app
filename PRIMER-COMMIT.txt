@@ -9,3 +9,10 @@ git commit -m "chore: initial project setup with folder structure"
 
 # Subir los cambios a GitHub
 git push origin main
+
+Nota sobre mensajes de commit: Usamos el formato Conventional Commits:
+
+feat: para nuevas funcionalidades
+fix: para correcciones
+chore: para tareas de mantenimiento
+docs: para documentación
