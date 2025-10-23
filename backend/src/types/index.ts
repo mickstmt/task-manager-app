@@ -32,3 +32,35 @@ export interface ApiResponse<T = any> {
   message?: string;
   error?: string;
 }
+
+/**
+ * DTOs (Data Transfer Objects) para requests
+ */
+export interface CreateTaskDTO {
+  title: string;
+  description: string;
+  status?: TaskStatus;
+  priority?: TaskPriority;
+  dueDate?: Date;
+  category?: string;
+}
+
+export interface UpdateTaskDTO {
+  title?: string;
+  description?: string;
+  status?: TaskStatus;
+  priority?: TaskPriority;
+  dueDate?: Date;
+  category?: string;
+}
+
+export interface CreateUserDTO {
+  email: string;
+  password: string;
+  name: string;
+}
+
+export interface LoginDTO {
+  email: string;
+  password: string;
+}
