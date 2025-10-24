@@ -1,15 +1,47 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import Layout from './components/Layout';
+
+// Páginas (las crearemos en el siguiente paso)
+import TaskListPage from './pages/TaskListPage';
+import DashboardPage from './pages/DashboardPage';
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Task Manager App
-        </h1>
-        <p className="text-gray-600">
-          Frontend está configurado correctamente ✅
-        </p>
-      </div>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<TaskListPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Routes>
+      </Layout>
+      
+      {/* Toaster para notificaciones */}
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: '#363636',
+            color: '#fff',
+          },
+          success: {
+            duration: 3000,
+            iconTheme: {
+              primary: '#10b981',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            duration: 4000,
+            iconTheme: {
+              primary: '#ef4444',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
+    </Router>
   );
 }
 
